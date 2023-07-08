@@ -27,8 +27,9 @@ public class DuplicateLead {
 		driver.findElement(By.xpath("//button[text()='Find Leads']")).click();
 		
 		//Clicking on First Resulting lead
-		WebElement captureName = driver.findElement(By.xpath("//a[text()='Revathy']"));
-		System.out.println(captureName.getText());
+			WebElement captureName = driver.findElement(By.xpath("//a[text()='Revathy']"));
+		String CapName = captureName.getText();
+		System.out.println(CapName);
 		
 		driver.findElement(By.xpath("//a[text()='Revathy']")).click();
 		
@@ -44,15 +45,15 @@ public class DuplicateLead {
 		driver.findElement(By.name("submitButton")).click();
 		Thread.sleep(3000);
 		
-		WebElement captureDuplicateName =driver.findElement(By.xpath("//span[@id='viewLead_firstName_sp']"));
-		System.out.println(captureDuplicateName.getText());
+		WebElement Name =driver.findElement(By.xpath("//span[contains(text(),'Revathy')]"));
+		String DupName = Name.getText();
 		
-	     
-	    if(captureName.equals(captureDuplicateName)) {
-	    	System.out.println("I Confirm the duplicated lead name is same as captured name");
+		//span[@id='viewLead_firstName_sp]
+	    if(CapName.equals(DupName)) {
+	    	System.out.println("The duplicated lead name is same as captured name");
 	    }
 	    else {
-	    	System.out.println("duplicated lead name is different as captured name");
+	    	System.out.println("The Duplicate lead name is different as capture name");
 	    }
 		
 	}
