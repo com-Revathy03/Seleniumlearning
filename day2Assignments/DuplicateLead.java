@@ -27,7 +27,7 @@ public class DuplicateLead {
 		driver.findElement(By.xpath("//button[text()='Find Leads']")).click();
 		
 		//Clicking on First Resulting lead
-			WebElement captureName = driver.findElement(By.xpath("//a[text()='Revathy']"));
+		WebElement captureName = driver.findElement(By.xpath("//a[text()='Revathy']"));
 		String CapName = captureName.getText();
 		System.out.println(CapName);
 		
